@@ -36,6 +36,20 @@
             <preference name="SwiftVersion" value="5" />
         </config-file>
 
+       <config-file target="*-Info.plist" parent="NSLocationAlwaysAndWhenInUseUsageDescription">
+        <string>We use your location to confirm your current location, verify home and employment addresses, and secure your account during logins.</string>
+        </config-file>
+
+<!-- Legacy fallback key for older iOS versions -->
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
+        <string>We use your location to confirm your current location, verify home and employment addresses, and secure your account during logins.</string>
+        </config-file>
+
+<!-- Required for foregound location access -->
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+        <string>We need your location to verify your current position, home address, and work location while using the app.</string>
+        </config-file>
+
         <source-file src="packages/cordova-plugin/ios/OSGeolocationCallbackManager.swift" />
         <source-file src="packages/cordova-plugin/ios/OSGeolocationConstants.swift" />
         <source-file src="packages/cordova-plugin/ios/OSGeolocationError.swift" />
